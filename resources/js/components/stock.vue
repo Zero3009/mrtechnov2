@@ -45,13 +45,16 @@
             </td>
         </tr>
     </table>
-    <div>
-    <vuetable ref="vuetable"
-        api-url="https://vuetable.ratiw.net/api/users"
-        :fields="['name', 'email', 'birthdate','id']"
-    ></vuetable>
-    <vuetable-pagination ref="pagination"></vuetable-pagination>
+    <div class="ui container">    
+        <vuetable ref="vuetable"
+            api-url="https://vuetable.ratiw.net/api/users"
+            :fields="fields"
+            pagination-path="" 
+            @vuetable:pagination-data="onPaginationData"
+        ></vuetable>
+        <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
     </div>
+
 </div>
 </template>
 <script>
@@ -91,7 +94,32 @@
                 url: '/ajax/productos',
                 url2: '/ajax/codbarras',
                 url3: '/ajax/proveedores',
-                url4: '/ajax/seriales'
+                url4: '/ajax/seriales',
+                fields: [
+                        'name', 'email',
+                        {
+                          name: 'birthdate',
+                          titleClass: 'center aligned',
+                          dataClass: 'center aligned',
+                          callback: 'formatDate|DD-MM-YYYY'
+                        },
+                        {
+                          name: 'nickname',
+                          callback: 'allcap'
+                        },
+                        {
+                          name: 'gender',
+                          titleClass: 'center aligned',
+                          dataClass: 'center aligned',
+                          callback: 'genderLabel'
+                        },
+                        {
+                          name: 'salary',
+                          titleClass: 'center aligned',
+                          dataClass: 'right aligned',
+                          callback: 'formatNumber'
+                        }
+                      ]
             }
             return datas;
         },
@@ -139,6 +167,25 @@
             {
                 index = this.rows.findIndex(x => x.id==event.currentTarget.id);
                 return Vue.delete(this.rows, index);
+            },
+            onPaginationData (paginationData) {
+              this.$refs.pagination.setPaginationData(paginationData)
+            },
+            onChangePage (page) {
+              this.$refs.vuetable.changePage(page)
+            },
+            genderLabel (value) {
+              return value === 'M'
+                ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
+                : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
+            },
+            formatNumber (value) {
+              return accounting.formatNumber(value, 2)
+            },
+            formatDate (value, fmt = 'D MMM YYYY') {
+              return (value == null)
+                ? ''
+                : moment(value, 'YYYY-MM-DD').format(fmt)
             }
         },
         beforeMount()

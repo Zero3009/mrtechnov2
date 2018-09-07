@@ -6,12 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel</title>
-        <!--<link rel="stylesheet" href="/css/app.css">-->
+
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css"  media="screen" title="no title" charset="utf-8">-->
+          
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.css') }}">
         <link rel="stylesheet" href="{{asset('/vendor/adminlte/vendor/bootstrap/dist/css/bootstrap.min.css')}}">
           <!-- Font Awesome -->
           <link rel="stylesheet" href="{{asset('/vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css')}}">
           <!-- Ionicons -->
-          <link rel="stylesheet" href="{{asset('/vendor/adminlte/vendor/Ionicons/css/ionicons.min.css')}}">
+         <link rel="stylesheet" href="{{asset('/vendor/adminlte/vendor/Ionicons/css/ionicons.min.css')}}">
           <!-- Theme style -->
           <link rel="stylesheet" href="{{asset('/vendor/adminlte/dist/css/AdminLTE.min.css')}}">
         <!-- Fonts -->
@@ -41,6 +44,7 @@
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
+
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -384,6 +388,7 @@
 
 </html>
 <script src="{{asset('/js/app.js')}}"></script>
+<script src="{{ asset('js/semantic.js') }}"></script>
   <script src="/vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
   <script src="/vendor/adminlte/dist/js/adminlte.min.js"></script>

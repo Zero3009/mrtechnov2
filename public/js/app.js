@@ -25030,7 +25030,7 @@ module.exports = Vue;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
-module.exports = __webpack_require__(53);
+module.exports = __webpack_require__(55);
 
 
 /***/ }),
@@ -25081,9 +25081,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('axios', __WEBPACK_IMPORTE
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('vuetable', __WEBPACK_IMPORTED_MODULE_5_vuetable_2___default.a);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('vuetable-pagination', __WEBPACK_IMPORTED_MODULE_6_vuetable_2_src_components_VuetablePagination___default.a);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('vuejs-datepicker', __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__["a" /* default */]);
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('example-component', __webpack_require__(46));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('stock', __webpack_require__(49));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('productos', __webpack_require__(52));
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('example-component', __webpack_require__(48));
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('stock', __webpack_require__(51));
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('productos', __webpack_require__(54));
 
 var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
   el: '#app'
@@ -48824,7 +48824,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(44)
 /* template */
-var __vue_template__ = __webpack_require__(45)
+var __vue_template__ = __webpack_require__(47)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48864,12 +48864,154 @@ module.exports = Component.exports
 
 /***/ }),
 /* 44 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: Error: Couldn't find preset \"stage-2\" relative to directory \"C:\\\\xampp\\\\htdocs\\\\mrtechnov2\\\\node_modules\\\\vuetable-2\"\n    at C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\file\\options\\option-manager.js:293:19\n    at Array.map (<anonymous>)\n    at OptionManager.resolvePresets (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\file\\options\\option-manager.js:275:20)\n    at OptionManager.mergePresets (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\file\\options\\option-manager.js:264:10)\n    at OptionManager.mergeOptions (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\file\\options\\option-manager.js:249:14)\n    at OptionManager.init (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\file\\options\\option-manager.js:368:12)\n    at File.initOptions (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\file\\index.js:212:65)\n    at new File (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\file\\index.js:135:24)\n    at Pipeline.transform (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-core\\lib\\transformation\\pipeline.js:46:16)\n    at transpile (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-loader\\lib\\index.js:50:20)\n    at C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-loader\\lib\\fs-cache.js:118:18\n    at ReadFileContext.callback (C:\\xampp\\htdocs\\mrtechnov2\\node_modules\\babel-loader\\lib\\fs-cache.js:31:21)\n    at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:420:13)");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue__);
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue___default.a]
+});
 
 /***/ }),
 /* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(46)
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "node_modules/vuetable-2/src/components/VuetablePaginationMixin.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5c4c2408", Component.options)
+  } else {
+    hotAPI.reload("data-v-5c4c2408", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    css: {
+      type: Object,
+      default: function _default() {
+        return {
+          wrapperClass: 'ui right floated pagination menu',
+          activeClass: 'active large',
+          disabledClass: 'disabled',
+          pageClass: 'item',
+          linkClass: 'icon item',
+          paginationClass: 'ui bottom attached segment grid',
+          paginationInfoClass: 'left floated left aligned six wide column',
+          dropdownClass: 'ui search dropdown',
+          icons: {
+            first: 'angle double left icon',
+            prev: 'left chevron icon',
+            next: 'right chevron icon',
+            last: 'angle double right icon'
+          }
+        };
+      }
+    },
+    onEachSide: {
+      type: Number,
+      default: function _default() {
+        return 2;
+      }
+    }
+  },
+  data: function data() {
+    return {
+      eventPrefix: 'vuetable-pagination:',
+      tablePagination: null
+    };
+  },
+  computed: {
+    totalPage: function totalPage() {
+      return this.tablePagination === null ? 0 : this.tablePagination.last_page;
+    },
+    isOnFirstPage: function isOnFirstPage() {
+      return this.tablePagination === null ? false : this.tablePagination.current_page === 1;
+    },
+    isOnLastPage: function isOnLastPage() {
+      return this.tablePagination === null ? false : this.tablePagination.current_page === this.tablePagination.last_page;
+    },
+    notEnoughPages: function notEnoughPages() {
+      return this.totalPage < this.onEachSide * 2 + 4;
+    },
+    windowSize: function windowSize() {
+      return this.onEachSide * 2 + 1;
+    },
+    windowStart: function windowStart() {
+      if (!this.tablePagination || this.tablePagination.current_page <= this.onEachSide) {
+        return 1;
+      } else if (this.tablePagination.current_page >= this.totalPage - this.onEachSide) {
+        return this.totalPage - this.onEachSide * 2;
+      }
+
+      return this.tablePagination.current_page - this.onEachSide;
+    }
+  },
+  methods: {
+    loadPage: function loadPage(page) {
+      this.$emit(this.eventPrefix + 'change-page', page);
+    },
+    isCurrentPage: function isCurrentPage(page) {
+      return page === this.tablePagination.current_page;
+    },
+    setPaginationData: function setPaginationData(tablePagination) {
+      this.tablePagination = tablePagination;
+    },
+    resetData: function resetData() {
+      this.tablePagination = null;
+    }
+  }
+});
+
+/***/ }),
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49028,15 +49170,15 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(47)
+var __vue_script__ = __webpack_require__(49)
 /* template */
-var __vue_template__ = __webpack_require__(48)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49075,7 +49217,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49103,7 +49245,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49146,15 +49288,15 @@ if (false) {
 }
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(50)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(51)
+var __vue_template__ = __webpack_require__(53)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49193,11 +49335,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -49287,7 +49432,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             url: '/ajax/productos',
             url2: '/ajax/codbarras',
             url3: '/ajax/proveedores',
-            url4: '/ajax/seriales'
+            url4: '/ajax/seriales',
+            fields: ['name', 'email', {
+                name: 'birthdate',
+                titleClass: 'center aligned',
+                dataClass: 'center aligned',
+                callback: 'formatDate|DD-MM-YYYY'
+            }, {
+                name: 'nickname',
+                callback: 'allcap'
+            }, {
+                name: 'gender',
+                titleClass: 'center aligned',
+                dataClass: 'center aligned',
+                callback: 'genderLabel'
+            }, {
+                name: 'salary',
+                titleClass: 'center aligned',
+                dataClass: 'right aligned',
+                callback: 'formatNumber'
+            }]
         };
         return datas;
     },
@@ -49333,6 +49497,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return x.id == event.currentTarget.id;
             });
             return Vue.delete(this.rows, index);
+        },
+        onPaginationData: function onPaginationData(paginationData) {
+            this.$refs.pagination.setPaginationData(paginationData);
+        },
+        onChangePage: function onChangePage(page) {
+            this.$refs.vuetable.changePage(page);
+        },
+        genderLabel: function genderLabel(value) {
+            return value === 'M' ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>' : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>';
+        },
+        formatNumber: function formatNumber(value) {
+            return accounting.formatNumber(value, 2);
+        },
+        formatDate: function formatDate(value) {
+            var fmt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'D MMM YYYY';
+
+            return value == null ? '' : moment(value, 'YYYY-MM-DD').format(fmt);
         }
     },
     beforeMount: function beforeMount() {
@@ -49341,7 +49522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49580,16 +49761,22 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
+      { staticClass: "ui container" },
       [
         _c("vuetable", {
           ref: "vuetable",
           attrs: {
             "api-url": "https://vuetable.ratiw.net/api/users",
-            fields: ["name", "email", "birthdate", "id"]
-          }
+            fields: _vm.fields,
+            "pagination-path": ""
+          },
+          on: { "vuetable:pagination-data": _vm.onPaginationData }
         }),
         _vm._v(" "),
-        _c("vuetable-pagination", { ref: "pagination" })
+        _c("vuetable-pagination", {
+          ref: "pagination",
+          on: { "vuetable-pagination:change-page": _vm.onChangePage }
+        })
       ],
       1
     )
@@ -49656,7 +49843,7 @@ if (false) {
 }
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var normalizeComponent = __webpack_require__(2)
@@ -49686,7 +49873,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
