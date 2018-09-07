@@ -277,9 +277,6 @@
                     </h1>
                 </section>-->
                 <section class="content">
-                  <div id="testing">
-                    <example-component></example-component>
-                  </div>
                     @yield('main-content')
                 </section>
             </div>
