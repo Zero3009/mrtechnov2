@@ -58,11 +58,11 @@
 </div>
 </template>
 <script>
-    
     export default {
         //el: "#app",
         data: function()
         {   
+
             var state = {
                 date: new Date()
             }
@@ -113,12 +113,12 @@
                           dataClass: 'center aligned',
                           callback: 'genderLabel'
                         },
-                        {
+                        /*{
                           name: 'salary',
                           titleClass: 'center aligned',
                           dataClass: 'right aligned',
                           callback: 'formatNumber'
-                        }
+                        }*/
                       ]
             }
             return datas;
@@ -179,14 +179,14 @@
                 ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
                 : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
             },
-            formatNumber (value) {
+            /*formatNumber (value) {
               return accounting.formatNumber(value, 2)
-            },
-            formatDate (value, fmt = 'D MMM YYYY') {
+            },*/
+            /*formatDate (value, fmt = 'D MMM YYYY') {
               return (value == null)
                 ? ''
                 : moment(value, 'YYYY-MM-DD').format(fmt)
-            }
+            }*/
         },
         beforeMount()
         {

@@ -23,6 +23,7 @@
         "vuetable-2": "^1.7.5"
     },
     "dependencies": {
+        "moment": "^2.22.2",
         "vue-select": "^2.5.0",
         "vuejs-datepicker": "^1.5.3"
     }

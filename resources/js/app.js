@@ -16,12 +16,14 @@ import Datepicker from 'vuejs-datepicker';
 import axios from 'axios';
 import vuetable from 'vuetable-2';
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination';
+import moment from 'moment';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+Vue.component('moment', moment);
 Vue.component('v-select', vSelect);
 Vue.component('axios', axios);
 Vue.component('vuetable', vuetable);
