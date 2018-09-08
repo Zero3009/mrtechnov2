@@ -10,7 +10,7 @@
             <th scope="col" style="width:15%">Fecha Entrada</th>
             <th scope="col" style="width:10%">Accion</th>
         </tr>
-        <tr v-bind:id="'row_' + n.id" v-for="n in rows">
+        <tr v-bind:id="'row_' + n.id" v-for="n in rowsdynamic">
             
             <td style="width:18%">
                 <v-select :options="options" v-model="n.codbarras" placeholder="Código de barras"></v-select>
@@ -45,19 +45,12 @@
             </td>
         </tr>
     </table>
-    <div class="ui container">    
-        <vuetable ref="vuetable"
-            api-url="https://vuetable.ratiw.net/api/users"
-            :fields="fields"
-            pagination-path="" 
-            @vuetable:pagination-data="onPaginationData"
-        ></vuetable>
-        <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
-    </div>
-
+    <vuetable>
+    </vuetable>
 </div>
 </template>
 <script>
+    import vuetable from './vuetable';
     export default {
         //el: "#app",
         data: function()
@@ -75,7 +68,7 @@
                 options: [],
                 proveedores: [],
                 seriales: [],
-                rows: [
+                rowsdynamic: [
                     {
                         id: 1,
                         codbarras: null,
@@ -95,7 +88,8 @@
                 url2: '/ajax/codbarras',
                 url3: '/ajax/proveedores',
                 url4: '/ajax/seriales',
-                fields: [
+                
+                /*fields: [
                         'name', 'email',
                         {
                           name: 'birthdate',
@@ -112,16 +106,19 @@
                           titleClass: 'center aligned',
                           dataClass: 'center aligned',
                           callback: 'genderLabel'
-                        },
+                        },*/
                         /*{
                           name: 'salary',
                           titleClass: 'center aligned',
                           dataClass: 'right aligned',
                           callback: 'formatNumber'
                         }*/
-                      ]
+                        //],
             }
             return datas;
+        },
+        components:{
+            vuetable
         },
         methods: {
             cargarSelects()
@@ -161,14 +158,14 @@
             },
             aument() 
             {
-                return this.rows.push({id: this.rows[this.rows.length - 1].id + 1, codbarras: null, proveedor: null, seriales: null});
+                return this.rowsdynamic.push({id: this.rowsdynamic[this.rowsdynamic.length - 1].id + 1, codbarras: null, proveedor: null, seriales: null});
             },
             decrease(event) 
             {
-                index = this.rows.findIndex(x => x.id==event.currentTarget.id);
-                return Vue.delete(this.rows, index);
+                index = this.rowsdynamic.findIndex(x => x.id==event.currentTarget.id);
+                return Vue.delete(this.rowsdynamic, index);
             },
-            onPaginationData (paginationData) {
+            /*onPaginationData (paginationData) {
               this.$refs.pagination.setPaginationData(paginationData)
             },
             onChangePage (page) {
@@ -178,7 +175,8 @@
               return value === 'M'
                 ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
                 : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
-            },
+            },*/
+            
             /*formatNumber (value) {
               return accounting.formatNumber(value, 2)
             },*/
