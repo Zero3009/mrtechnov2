@@ -24,10 +24,16 @@
                     @endforeach
                     </div>
                 @endif 
-
-                <form method="POST" action="/admin/stock/nuevo/post" accept-charset="UTF-8" class="form-horizontal" id="app">
+                
+                <form method="POST" action="/admin/stock/nuevo/post" accept-charset="UTF-8" class="form-horizontal">
                     @verbatim
                     <stock></stock>
+                    @endverbatim
+                    <input class="btn btn btn-success" tabindex="1" type="submit" value="Cargar">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </form>
+                    
+                    <vuetable></vuetable>
                     <!--<template id="app">-->
                         <!--<table class="table table-striped table-bordered" name="tabla" id="tabla">
                             <tr>
@@ -74,11 +80,10 @@
                                 </td>
                             </tr>
                         </table>-->
-                        @endverbatim
-                        <input class="btn btn btn-success" tabindex="1" type="submit" value="Cargar">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
+                        
                     <!--</template>-->
-                </form>
+                
                 <table class="table table-striped table-bordered tabla-filtro" width="100%" id="table">
                     <thead>
                         <tr>

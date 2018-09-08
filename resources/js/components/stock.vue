@@ -1,56 +1,64 @@
 <template>
-<div>
-    <table class="table table-striped table-bordered" name="tabla" id="tabla">
-        <tr>
-            <th scope="col" style="width:18%">Codigo de barras</th>
-            <th scope="col" style="width:15%">Modelo</th>
-            <th scope="col" style="width:20%">Serial</th>
-            <th scope="col" style="width:10%">Proveedor</th>
-            <th scope="col" style="width:12%">Precio Entrada</th>
-            <th scope="col" style="width:15%">Fecha Entrada</th>
-            <th scope="col" style="width:10%">Accion</th>
-        </tr>
-        <tr v-bind:id="'row_' + n.id" v-for="n in rowsdynamic">
+    
+    <div>
+        <table class="table table-striped table-bordered" name="tabla" id="tabla">
             
-            <td style="width:18%">
-                <v-select :options="options" v-model="n.codbarras" placeholder="Código de barras"></v-select>
-                <template v-if="n.codbarras != null">
-                    <input type="hidden" name="codbarras[]" v-model="n.codbarras.value">
-                </template></td>
-            <td style="width:15%">
-                <template v-if="n.codbarras != null">
-                    <label class="form-control">{{n.codbarras.modelo}}</label>
-                </template>
-            </td>
-            <td style="width:20%">
-                <v-select v-model="n.seriales" :options="seriales" multiple taggable placeholder="Seriales"></v-select>
-                <template v-if="n.seriales != null"><input type="hidden" name="seriales[]" v-model="n.seriales">
-                </template>
-            <td style="width:10%">
+            <tr>
+                <th scope="col" style="width:18%">Codigo de barras</th>
+                <th scope="col" style="width:15%">Modelo</th>
+                <th scope="col" style="width:20%">Serial</th>
+                <th scope="col" style="width:10%">Proveedor</th>
+                <th scope="col" style="width:12%">Precio Entrada</th>
+                <th scope="col" style="width:15%">Fecha Entrada</th>
+                <th scope="col" style="width:10%">Accion</th>
+            </tr>
+            <tr v-bind:id="'row_' + n.id" v-for="n in rowsdynamic">
+                
+                <td style="width:18%">
+                    <v-select :options="options" v-model="n.codbarras" placeholder="Código de barras"></v-select>
+                    <template v-if="n.codbarras != null">
+                        <input type="hidden" name="codbarras[]" v-model="n.codbarras.value">
+                    </template>
+                </td>
+                <td style="width:15%">
+                    <template v-if="n.codbarras != null">
+                        <label class="form-control">{{n.codbarras.modelo}}</label>
+                    </template>
+                </td>
+                <td style="width:20%">
+                    <v-select   v-model="n.seriales" 
+                                :options="seriales" 
+                                taggable 
+                                multiple 
+                                placeholder="Seriales">
+                    </v-select>
+                    <template v-if="n.seriales != null">
+                        <input type="hidden" name="seriales[]" v-model="n.seriales">
+                    </template>
+                </td>
+                <td style="width:10%">
 
-                <v-select :options="proveedores" v-model="n.proveedor" placeholder="Proveedor"></v-select>
-                <template v-if="n.proveedor != null">
-                    <input type="hidden" name="proveedor[]" v-model="n.proveedor.value">
-                </template>
-            </td>
-            <td style="width:12%">
-                <input type="number" class="form-control" name="precioEntrada[]" id="precioEntrada_1">
-            </td>
-            <td style="width:15%">
-                <vuejs-datepicker input-class="form-control" :value="state" format="yyyy-MM-dd" name="fecha[]" placeholder="Fecha" :language="es" full-month-name></vuejs-datepicker>
-            </td>
-            <td style="width:10%">
-                <input data-bot="add" class="btn btn-success" v-on:click="aument()" tabindex="1" type="button" name="add"  id="add_1" value="+">
-                <button  type="button" name="remove" v-on:click="decrease($event)" v-bind:id="n.id" v-show="n.id > 1" class="btn btn-danger">X</button>
-            </td>
-        </tr>
-    </table>
-    <vuetable>
-    </vuetable>
-</div>
+                    <v-select :options="proveedores" v-model="n.proveedor" placeholder="Proveedor"></v-select>
+                    <template v-if="n.proveedor != null">
+                        <input type="hidden" name="proveedor[]" v-model="n.proveedor.value">
+                    </template>
+                </td>
+                <td style="width:12%">
+                    <input type="number" class="form-control" name="precioEntrada[]" id="precioEntrada_1">
+                </td>
+                <td style="width:15%">
+                    <vuejs-datepicker input-class="form-control" :value="state" format="yyyy-MM-dd" name="fecha[]" placeholder="Fecha" :language="es" full-month-name></vuejs-datepicker>
+                </td>
+                <td style="width:10%">
+                    <input data-bot="add" class="btn btn-success" v-on:click="aument()" tabindex="1" type="button" name="add"  id="add_1" value="+">
+                    <button  type="button" name="remove" v-on:click="decrease($event)" v-bind:id="n.id" v-show="n.id > 1" class="btn btn-danger">X</button>
+                </td>
+            </tr>
+            
+        </table>
+    </div>
 </template>
 <script>
-    import vuetable from './vuetable';
     export default {
         //el: "#app",
         data: function()
@@ -88,32 +96,6 @@
                 url2: '/ajax/codbarras',
                 url3: '/ajax/proveedores',
                 url4: '/ajax/seriales',
-                
-                /*fields: [
-                        'name', 'email',
-                        {
-                          name: 'birthdate',
-                          titleClass: 'center aligned',
-                          dataClass: 'center aligned',
-                          callback: 'formatDate|DD-MM-YYYY'
-                        },
-                        {
-                          name: 'nickname',
-                          callback: 'allcap'
-                        },
-                        {
-                          name: 'gender',
-                          titleClass: 'center aligned',
-                          dataClass: 'center aligned',
-                          callback: 'genderLabel'
-                        },*/
-                        /*{
-                          name: 'salary',
-                          titleClass: 'center aligned',
-                          dataClass: 'right aligned',
-                          callback: 'formatNumber'
-                        }*/
-                        //],
             }
             return datas;
         },
@@ -138,12 +120,11 @@
             {
                 axios.get(this.url4)
                     .then(response => {
-                        //this.seriales = response.data;
                         var a = [];
                         response.data.forEach(function(item){
                             a.push(item.label);
                         });   
-                        //console.log(a);
+                        console.log(a);
                         this.seriales = a;
                 })
             },
@@ -162,7 +143,7 @@
             },
             decrease(event) 
             {
-                index = this.rowsdynamic.findIndex(x => x.id==event.currentTarget.id);
+                var index = this.rowsdynamic.findIndex(x => x.id==event.currentTarget.id);
                 return Vue.delete(this.rowsdynamic, index);
             },
             /*onPaginationData (paginationData) {

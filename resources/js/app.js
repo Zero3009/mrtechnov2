@@ -10,8 +10,8 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import jquery from 'jquery';
-import Vue from 'vue'
-import vSelect from 'vue-select'
+import Vue from 'vue';
+import vSelect from 'vue-select';
 import Datepicker from 'vuejs-datepicker';
 import axios from 'axios';
 import vuetable from 'vuetable-2';
@@ -32,6 +32,9 @@ Vue.component('vuejs-datepicker', Datepicker);
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('stock', require('./components/stock.vue'));
 Vue.component('productos', require('./components/productos.vue'));
+Vue.component('productosnuevo', require('./components/productosnuevo.vue'));
+Vue.component('proveedores', require('./components/proveedores'));
+Vue.component('vuetablestock', require('./components/vuetablestock'));
 
 
 const app = new Vue({

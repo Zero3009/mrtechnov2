@@ -280,7 +280,7 @@
                         <small></small>
                     </h1>
                 </section>-->
-                <section class="content">
+                <section class="content" id="app">
                     @yield('main-content')
                 </section>
             </div>
@@ -385,10 +385,10 @@
      Both of these plugins are recommended to enhance the
      user experience. -->
 </body>
-
-</html>
 <script src="{{asset('/js/app.js')}}"></script>
 <script src="{{ asset('js/semantic.js') }}"></script>
-  <script src="/vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
-  <script src="/vendor/adminlte/dist/js/adminlte.min.js"></script>
+<script src="/vendor/adminlte/dist/js/adminlte.min.js"></script>
+</html>
+

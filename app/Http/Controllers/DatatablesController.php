@@ -15,10 +15,14 @@ use DB;
 
 class DatatablesController extends Controller
 {
-	public function GetProveedores()
+	public function GetProveedores(Request $request)
 	{
+		$ordenar = explode('|', $request->sort);
 		$retornar = Proveedores::select(['provs.id', 'provs.nombre', 'provs.tel'])
-					->where('estado','=', true);
+						->where('estado','=', true)
+						->orderBy("$ordenar[0]", "$ordenar[1]")
+						->paginate(10);
+		return $retornar;
 		/*$datatables = app('datatables')
 						->of($retornar)
 						->addColumn('action', function($retornar){
@@ -26,15 +30,14 @@ class DatatablesController extends Controller
 						});
 		return $datatables->make(true);*/ 
 	}
-	public function GetProductos()
+	public function GetProductos(Request $request)
 	{
-		$retornar = Productos::select(['prods.id', 'prods.tipo','prods.marca','prods.modelo','prods.codbarras'])->where('estado','=', true);
-		$datatables = app('datatables')
-						->of($retornar)
-						->addColumn('action', function($retornar){
-							return '<a href="/admin/productos/editar/'.$retornar->id.'" class="btn btn-xs btn-primary details-control"><i class="glyphicon glyphicon-edit"></i></a><a href="#" class="btn btn-xs btn-danger delete" data-id="'.$retornar->id.'"><i class="glyphicon glyphicon-trash"></i></a>';
-						});
-		return $datatables->make(true);
+		$ordenar = explode('|', $request->sort);
+		$retornar = Productos::select(['prods.id', 'prods.tipo','prods.marca','prods.modelo','prods.codbarras'])
+						->where('estado','=', true)
+						->orderBy("$ordenar[0]", "$ordenar[1]")
+						->paginate(10);
+		return $retornar;
 	}
 	public function getStock(Request $request)
 	{

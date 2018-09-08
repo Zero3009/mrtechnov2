@@ -12,32 +12,7 @@
 	                    </div>
 	            	</div>
 	            </div>
-	            <div class="panel-body" style="background: #D7D7D7">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2">Tipo:</label>
-                        <div class="col-sm-4">
-                        	<select name="tipo" class="form-control" style="width: 100%" id="tipo" required></select>
-                        </div>
-                        <label class="control-label col-sm-2">Marca:</label>
-	                    <div class="col-sm-4"> 
-	                        <!--<select class="form-control" name="tipo" required="true" id="tipo">
-							</select>-->
-							<select name="marca" class="form-control" style="width: 100%" id="marca" required></select>
-						</div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2">Modelo:</label>
-                        <div class="col-sm-4">
-                            <input class="form-control" style="width: 100%" name="modelo" type="text" required>
-                        </div>
-                        <label class="control-label col-sm-2">Código de barras:</label>
-	                    <div class="col-sm-4"> 
-	                        <!--<select class="form-control" name="tipo" required="true" id="tipo">
-							</select>-->
-							<input class="form-control" type="text" name="codbarras">
-						</div>
-                    </div>
-	            </div>
+	            <productosnuevo></productosnuevo>
 	            <div class="panel-footer">
 	                <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
 	                <input class="btn btn btn-success" tabindex="1" type="submit" value="Crear producto">
@@ -50,7 +25,7 @@
 @section('js')
 @push('scripts')
 <script>
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 		$('#tipo').select2({
 			placeholder: 'Tipo de producto',
 			tags: true,
@@ -95,7 +70,7 @@
 				}
 			}
 		});
-	});
+	});*/
 	/*$.getJSON("/ajax/productos", function (json) {
 		console.log(json);
 	    $.each(json, function(i, item) {
