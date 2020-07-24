@@ -198,7 +198,7 @@
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" id="menu">
 
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -387,8 +387,5 @@
 </body>
 <script src="{{asset('/js/app.js')}}"></script>
 <script src="{{ asset('js/semantic.js') }}"></script>
-<script src="/vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- AdminLTE App -->
-<script src="/vendor/adminlte/dist/js/adminlte.min.js"></script>
 </html>
 

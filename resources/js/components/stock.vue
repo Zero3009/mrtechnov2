@@ -63,7 +63,6 @@
         //el: "#app",
         data: function()
         {   
-
             var state = {
                 date: new Date()
             }
@@ -99,9 +98,6 @@
             }
             return datas;
         },
-        components:{
-            vuetable
-        },
         methods: {
             cargarSelects()
             {
@@ -114,6 +110,7 @@
                 axios.get(this.url2)
                     .then(response => {
                         this.options = response.data;
+                        //this.$parent.$options.methods.setGlobalOptions(response.data);
                 });
             },
             serials()
@@ -124,7 +121,6 @@
                         response.data.forEach(function(item){
                             a.push(item.label);
                         });   
-                        console.log(a);
                         this.seriales = a;
                 })
             },
@@ -134,7 +130,6 @@
                     .then(response => {
                         
                         this.proveedores = response.data;
-
                 });
             },
             aument() 
@@ -145,27 +140,7 @@
             {
                 var index = this.rowsdynamic.findIndex(x => x.id==event.currentTarget.id);
                 return Vue.delete(this.rowsdynamic, index);
-            },
-            /*onPaginationData (paginationData) {
-              this.$refs.pagination.setPaginationData(paginationData)
-            },
-            onChangePage (page) {
-              this.$refs.vuetable.changePage(page)
-            },
-            genderLabel (value) {
-              return value === 'M'
-                ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>'
-                : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
-            },*/
-            
-            /*formatNumber (value) {
-              return accounting.formatNumber(value, 2)
-            },*/
-            /*formatDate (value, fmt = 'D MMM YYYY') {
-              return (value == null)
-                ? ''
-                : moment(value, 'YYYY-MM-DD').format(fmt)
-            }*/
+            }
         },
         beforeMount()
         {
